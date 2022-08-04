@@ -48,6 +48,17 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
+  it('#GET jersey/:id should return a single jersey', async () => {
+    const resp = await request(app).get('/jerseys/2');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: '2',
+      name: 'Manchester United FC',
+      country: 'England',
+      league: 'Barclays English Preimer Leauge',
+      cost: '90',
+    });
+  });
   afterAll(() => {
     pool.end();
   });
