@@ -48,7 +48,7 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
-  it('#GET jersey/:id should return a single jersey', async () => {
+  it('#GET jerseys/:id should return a single jersey', async () => {
     const resp = await request(app).get('/jerseys/2');
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
