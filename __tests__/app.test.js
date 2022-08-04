@@ -73,6 +73,13 @@ describe('backend-express-template routes', () => {
       ...newJersey,
     });
   });
+  it('#PUT /jerseys/:id should update an existing jersey', async () => {
+    const resp = await request(app).put('/jerseys/1').send({
+      cost: '150',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.cost).toBe('150');
+  });
   afterAll(() => {
     pool.end();
   });
