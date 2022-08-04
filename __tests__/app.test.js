@@ -59,6 +59,20 @@ describe('backend-express-template routes', () => {
       cost: '90',
     });
   });
+  it('#POST /jerseys should create a new jersey', async () => {
+    const newJersey = {
+      name: 'Cuervos FC',
+      country: 'Mexico',
+      league: 'Liga MX',
+      cost: '65',
+    };
+    const resp = await request(app).post('/jerseys').send(newJersey);
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newJersey,
+    });
+  });
   afterAll(() => {
     pool.end();
   });
