@@ -80,6 +80,12 @@ describe('backend-express-template routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body.cost).toBe('150');
   });
+  it('#DELETE /jerseys/:id should delete a jersey', async () => {
+    const resp = await request(app).delete('/jerseys/1');
+    expect(resp.status).toBe(200);
+    const delResp = await request(app).get('/jerseys/1');
+    expect(delResp.status).toBe(404);
+  });
   afterAll(() => {
     pool.end();
   });
