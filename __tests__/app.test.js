@@ -16,35 +16,35 @@ describe('backend-express-template routes', () => {
         name: 'Real Madrid FC',
         country: 'Spain',
         league: 'La Liga Santander',
-        cost: '105'
+        cost: '105',
       },
       {
         id: '2',
         name: 'Manchester United FC',
         country: 'England',
         league: 'Barclays English Preimer Leauge',
-        cost: '90'
+        cost: '90',
       },
       {
         id: '3',
         name: 'Juventus CF',
         country: 'Italy',
         league: 'Seria A',
-        cost: '93'
+        cost: '93',
       },
       {
         id: '4',
         name: 'PSG',
         country: 'France',
-        league: 'league un',
-        cost: '85'
+        league: 'League un',
+        cost: '85',
       },
       {
         id: '5',
         name: 'Timbers',
         country: 'USA',
         league: 'MLS',
-        cost: '500'
+        cost: '500',
       },
     ]);
   });

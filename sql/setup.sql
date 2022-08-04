@@ -30,12 +30,14 @@ VALUES
         'Italy',
         'Seria A',
         '93'
-    ),(
+    ),
+    (
         'PSG',
         'France',
         'League un',
         '85'
-    ),(
+    ),
+    (
         'Timbers',
         'USA',
         'MLS',
