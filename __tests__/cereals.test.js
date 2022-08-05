@@ -75,10 +75,11 @@ describe('backend-express-template routes', () => {
   });
   it('#PUT /cereals/:id should update an existing cereal', async () => {
     const resp = await request(app).put('/cereals/1').send({
-      cost: '20',
+      price: '20',
     });
+    console.log(resp.body);
     expect(resp.status).toBe(200);
-    expect(resp.body.cost).toBe('20');
+    expect(resp.body.price).toBe('20');
   });
   afterAll(() => {
     pool.end();
