@@ -59,6 +59,20 @@ describe('backend-express-template routes', () => {
       size: 'large',
     });
   });
+  it('#POST /cereals should create a new cereal', async () => {
+    const newCereal = {
+      name: 'Hogies', 
+      maker: 'Harold', 
+      price: '15',
+      size: 'large',
+    };
+    const resp = await request(app).post('/cereals').send(newCereal);
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newCereal,
+    });
+  });
   afterAll(() => {
     pool.end();
   });
