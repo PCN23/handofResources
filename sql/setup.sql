@@ -1,6 +1,7 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS jerseys;
+DROP TABLE IF EXISTS cereals;
 
 CREATE TABLE jerseys (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -53,7 +54,7 @@ VALUES
 );
 INSERT INTO 
     jerseys (name, country, league, cost)
-    
+
 VALUES
     (
         'Real Madrid FC',
