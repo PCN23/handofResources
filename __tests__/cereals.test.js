@@ -67,11 +67,18 @@ describe('backend-express-template routes', () => {
       size: 'large',
     };
     const resp = await request(app).post('/cereals').send(newCereal);
-    // expect(resp.status).toBe(200);
+    expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
       id: expect.any(String),
       ...newCereal,
     });
+  });
+  it('#PUT /cereals/:id should update an existing cereal', async () => {
+    const resp = await request(app).put('/cereals/1').send({
+      cost: '20',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.cost).toBe('20');
   });
   afterAll(() => {
     pool.end();
