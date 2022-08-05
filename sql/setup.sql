@@ -12,10 +12,10 @@ CREATE TABLE jerseys (
 );
 CREATE TABLE cereals (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    name VARCHAR NOT NULL,
-    maker VARCHAR NOT NULL,
+    name VARCHAR ,
+    maker VARCHAR ,
     price BIGINT,
-    size VARCHAR NOT NULL
+    size VARCHAR 
 );
 
 INSERT INTO 
