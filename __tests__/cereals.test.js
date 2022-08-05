@@ -7,7 +7,7 @@ describe('backend-express-template routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it('#GET /cereals should return a list of cereal', async () => {
+  it.skip('#GET /cereals should return a list of cereal', async () => {
     const resp = await request(app).get('/cereals');
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual([
@@ -48,7 +48,7 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
-  it('#GET cereals/:id should return a single cereal', async () => {
+  it.skip('#GET cereals/:id should return a single cereal', async () => {
     const resp = await request(app).get('/cereals/2');
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
@@ -59,7 +59,7 @@ describe('backend-express-template routes', () => {
       size: 'large',
     });
   });
-  it('#POST /cereals should create a new cereal', async () => {
+  it.skip('#POST /cereals should create a new cereal', async () => {
     const newCereal = {
       name: 'Hogies', 
       maker: 'Harold', 
@@ -73,7 +73,7 @@ describe('backend-express-template routes', () => {
       ...newCereal,
     });
   });
-  it('#PUT /cereals/:id should update an existing cereal', async () => {
+  it.skip('#PUT /cereals/:id should update an existing cereal', async () => {
     const resp = await request(app).put('/cereals/1').send({
       price: '20',
     });
@@ -81,7 +81,7 @@ describe('backend-express-template routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body.price).toBe('20');
   });
-  it('#DELETE /cereals/:id should delete a cereal', async () => {
+  it.skip('#DELETE /cereals/:id should delete a cereal', async () => {
     const resp = await request(app).delete('/cereals/1');
     expect(resp.status).toBe(200);
     const deleteResp = await request(app).get('/cereals/1');

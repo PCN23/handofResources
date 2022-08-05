@@ -2,6 +2,7 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS jerseys;
 DROP TABLE IF EXISTS cereals;
+DROP TABLE IF EXISTS glasses;
 
 CREATE TABLE jerseys (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -12,10 +13,36 @@ CREATE TABLE jerseys (
 );
 CREATE TABLE cereals (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    name VARCHAR ,
-    maker VARCHAR ,
-    price BIGINT,
+    name VARCHAR NOT NULL,
+    maker VARCHAR NOT NULL,
+    price BIGINT NOT NULL,
     size VARCHAR 
+);
+CREATE TABLE glasses (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    glassblower VARCHAR NOT NULL,
+    gas_used VARCHAR NOT NULL,
+    color VARCHAR NOT NULL
+)
+INSERT INTO glases ( name, glassblower, gas_used, color)
+VALUES (
+    'memorial glass',
+    'Bob Meyer',
+    'propane',
+    'mixed'
+),
+(
+    'lampwork',
+    'Jim Aden',
+    'propane',
+    'baby blue'
+),
+(
+    'floats',
+    'Bob Meyer',
+    'natural gas',
+    'yellow'
 );
 
 INSERT INTO 
