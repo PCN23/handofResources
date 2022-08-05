@@ -24,8 +24,10 @@ CREATE TABLE glasses (
     glassblower VARCHAR NOT NULL,
     gas_used VARCHAR NOT NULL,
     color VARCHAR NOT NULL
-)
-INSERT INTO glases ( name, glassblower, gas_used, color)
+);
+
+INSERT INTO glasses ( name, glassblower, gas_used, color)
+
 VALUES (
     'memorial glass',
     'Bob Meyer',
