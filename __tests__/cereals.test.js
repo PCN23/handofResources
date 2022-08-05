@@ -48,6 +48,17 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
+  it('#GET cereals/:id should return a single cereal', async () => {
+    const resp = await request(app).get('/cereals/2');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: '2',
+      name: 'ChocaPic',
+      maker: 'Nestel',
+      price: '25',
+      size: 'large',
+    });
+  });
   afterAll(() => {
     pool.end();
   });
