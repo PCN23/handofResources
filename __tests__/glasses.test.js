@@ -59,6 +59,14 @@ describe('backend-express-template routes', () => {
       ...newGlass,
     });
   });
+  it('#PUT /glasses/:id should update an existing glass', async () => {
+    const resp = await request(app).put('/glasses/1').send({
+      color: 'aqua',
+    });
+    console.log(resp.body);
+    expect(resp.status).toBe(200);
+    expect(resp.body.color).toBe('aqua');
+  });
   afterAll(() => {
     pool.end();
   });
