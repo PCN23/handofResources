@@ -7,7 +7,7 @@ describe('backend-express-template routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it.skip('#GET /jerseys should return a list of jerseys', async () => {
+  it('#GET /jerseys should return a list of jerseys', async () => {
     const resp = await request(app).get('/jerseys');
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual([
@@ -48,7 +48,7 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
-  it.skip('#GET jerseys/:id should return a single jersey', async () => {
+  it('#GET jerseys/:id should return a single jersey', async () => {
     const resp = await request(app).get('/jerseys/2');
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
@@ -59,7 +59,7 @@ describe('backend-express-template routes', () => {
       cost: '90',
     });
   });
-  it.skip('#POST /jerseys should create a new jersey', async () => {
+  it('#POST /jerseys should create a new jersey', async () => {
     const newJersey = {
       name: 'Cuervos FC',
       country: 'Mexico',
@@ -73,14 +73,14 @@ describe('backend-express-template routes', () => {
       ...newJersey,
     });
   });
-  it.skip('#PUT /jerseys/:id should update an existing jersey', async () => {
+  it('#PUT /jerseys/:id should update an existing jersey', async () => {
     const resp = await request(app).put('/jerseys/1').send({
       cost: '150',
     });
     expect(resp.status).toBe(200);
     expect(resp.body.cost).toBe('150');
   });
-  it.skip('#DELETE /jerseys/:id should delete a jersey', async () => {
+  it('#DELETE /jerseys/:id should delete a jersey', async () => {
     const resp = await request(app).delete('/jerseys/1');
     expect(resp.status).toBe(200);
     const delResp = await request(app).get('/jerseys/1');

@@ -3,6 +3,7 @@
 DROP TABLE IF EXISTS jerseys;
 DROP TABLE IF EXISTS cereals;
 DROP TABLE IF EXISTS glasses;
+DROP TABLE IF EXISTS teams;
 
 CREATE TABLE jerseys (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -24,6 +25,40 @@ CREATE TABLE glasses (
     glassblower VARCHAR NOT NULL,
     gas_used VARCHAR NOT NULL,
     color VARCHAR NOT NULL
+);
+CREATE TABLE teams (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    country VARCHAR NOT NULL,
+    league VARCHAR NOT NULL,
+    coach VARCHAR NOT NULL
+);
+INSERT INTO teams ( name, country, league, coach)
+
+VALUES 
+(
+    'Arsenal',
+    'England',
+    'English Premier',
+    'Arteta'
+),
+(
+    'Monaco',
+    'France',
+    'League un',
+    'Harrison'
+),
+(
+    'Getafe',
+    'Spain',
+    'La liga',
+    'Luis'
+),
+(
+    'Miami fc',
+    'USA',
+    'MLS',
+    'Polska'
 );
 
 INSERT INTO glasses ( name, glassblower, gas_used, color)
