@@ -7,7 +7,7 @@ describe('backend-express-template routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it.skip('#GET /teams should return a list of teams', async () => {
+  it('#GET /teams should return a list of teams', async () => {
     const resp = await request(app).get('/teams');
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual([
@@ -41,7 +41,7 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
-  it.skip('#GET teams/:id should return a single team', async () => {
+  it('#GET teams/:id should return a single team', async () => {
     const resp = await request(app).get('/teams/2');
     expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
@@ -52,7 +52,7 @@ describe('backend-express-template routes', () => {
       coach: 'Harrison',
     });
   });
-  it.skip('#POST /teams should create a new team', async () => {
+  it('#POST /teams should create a new team', async () => {
     const newTeam = {
       name: 'Paws',
       country: 'China',
@@ -66,14 +66,14 @@ describe('backend-express-template routes', () => {
       ...newTeam,
     });
   });
-  it.skip('#PUT /teams/:id should update an existing team', async () => {
+  it('#PUT /teams/:id should update an existing team', async () => {
     const resp = await request(app).put('/teams/2').send({
       coach: 'Garrison',
     });
     expect(resp.status).toBe(200);
     expect(resp.body.coach).toBe('Garrison');
   });
-  it.skip('#DELETE /teams/:id should delete a teams', async () => {
+  it('#DELETE /teams/:id should delete a teams', async () => {
     const resp = await request(app).delete('/teams/1');
     expect(resp.status).toBe(200);
     const deleteResp = await request(app).get('/teams/1');
