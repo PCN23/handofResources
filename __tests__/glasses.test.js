@@ -53,7 +53,7 @@ describe('backend-express-template routes', () => {
       color: 'orange',
     };
     const resp = await request(app).post('/glasses').send(newGlass);
-    //expect(resp.status).toBe(200);
+    expect(resp.status).toBe(200);
     expect(resp.body).toEqual({
       id: expect.any(String),
       ...newGlass,
@@ -63,7 +63,6 @@ describe('backend-express-template routes', () => {
     const resp = await request(app).put('/glasses/1').send({
       color: 'aqua',
     });
-    console.log(resp.body);
     expect(resp.status).toBe(200);
     expect(resp.body.color).toBe('aqua');
   });
