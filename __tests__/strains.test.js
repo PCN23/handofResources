@@ -73,6 +73,12 @@ describe('backend-express-template routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body.year).toBe('2021');
   });
+  it('#DELETE /strains/:id should delete a strain', async () => {
+    const resp = await request(app).delete('/strains/1');
+    expect(resp.status).toBe(200);
+    const deleteResp = await request(app).get('/strains/1');
+    expect(deleteResp.status).toBe(404);
+  });
   afterAll(() => {
     pool.end();
   });
