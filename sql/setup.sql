@@ -4,6 +4,8 @@ DROP TABLE IF EXISTS jerseys;
 DROP TABLE IF EXISTS cereals;
 DROP TABLE IF EXISTS glasses;
 DROP TABLE IF EXISTS teams;
+DROP TABLE IF EXISTS strains;
+
 
 CREATE TABLE jerseys (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -33,6 +35,41 @@ CREATE TABLE teams (
     league VARCHAR NOT NULL,
     coach VARCHAR NOT NULL
 );
+CREATE TABLE strains (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR NOT NULL, 
+    thc BIGINT NOT NULL, 
+    grower VARCHAR NOT NULL,
+    year BIGINT NOT NULL
+);
+
+INSERT INTO strains ( name, thc, grower, year)
+VALUES 
+(
+    'Gorilla glue',
+    '25',
+    'High Valley',
+    '2020'
+),
+(
+    'Bruce Banner',
+    '28',
+    'High Master Hill',
+    '2021'
+),
+(
+    'Blue Dream',
+    '32',
+    'Juicy Juice',
+    '2019'
+),
+(
+    'Golden Goat',
+    '35',
+    'Goats house',
+    '2022'
+);
+
 INSERT INTO teams ( name, country, league, coach)
 
 VALUES 
