@@ -66,6 +66,13 @@ describe('backend-express-template routes', () => {
       ...newStrain,
     });
   });
+  it('#PUT /strains/:id should update an existing strain', async () => {
+    const resp = await request(app).put('/strains/1').send({
+      year: '2021',
+    });
+    expect(resp.status).toBe(200);
+    expect(resp.body.year).toBe('2021');
+  });
   afterAll(() => {
     pool.end();
   });
