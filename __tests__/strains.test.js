@@ -52,6 +52,20 @@ describe('backend-express-template routes', () => {
       year: '2021',
     });
   });
+  it('#POST /strains should create a new strain', async () => {
+    const newStrain = {
+      name: 'Road glass', 
+      thc: '45', 
+      grower: 'Treehuger',
+      year: '2022',
+    };
+    const resp = await request(app).post('/strains').send(newStrain);
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: expect.any(String),
+      ...newStrain,
+    });
+  });
   afterAll(() => {
     pool.end();
   });
