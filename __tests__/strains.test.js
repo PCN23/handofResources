@@ -41,6 +41,17 @@ describe('backend-express-template routes', () => {
       },
     ]);
   });
+  it('#GET strains/:id should return a single strain', async () => {
+    const resp = await request(app).get('/strains/2');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      id: '2',
+      name: 'Bruce Banner',
+      thc: '28',
+      grower: 'High Master Hill',
+      year: '2021',
+    });
+  });
   afterAll(() => {
     pool.end();
   });
